@@ -9,16 +9,20 @@ export class CardModel extends React.Component {
         ide: this.props.id
     }
   }
+  
     render() {
       return (
         <div>
           <Card style={{ width: '18rem'}}>
             <Card.Img alt="logo" src={jk} />
             <Card.Body> 
-            <Card.Title>Card N° {this.state.ide}</Card.Title>
+            <Card.Title>
+              Card N° {this.state.ide} <br/>
+              <strong>{this.props.job}</strong>
+            </Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              Localidad: <strong>{this.props.locationNames}</strong><br/>
+              puclicacion: {this.props.postedAt}
             </Card.Text>
             <Button variant="warning">Go somewhere</Button>
             </Card.Body>
