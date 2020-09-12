@@ -36,11 +36,11 @@ class SignIn extends React.Component{
 
     render(){
         return(
-                <div className="auth-background">
+                <div className="size-auth">
                     <Container className="h-100 text-center">
                         {this.state.alert?<Alert variant='danger'>{this.state.alert.message}</Alert>:null}
                         <Row className="h-100 justify-content-center align-items-center">
-                            <Col lg={5} className="contentit">
+                            <Col lg={5} className="style-auth">
                                 <div class="mt-5">
                                     <h1><strong>Iniciar sesión</strong></h1>
                                 </div>

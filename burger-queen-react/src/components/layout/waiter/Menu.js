@@ -8,7 +8,7 @@ class Menu extends React.Component{
     }
     render(){
         return(
-                <CardGroup key={this.props.key} className="justify-content-md-center">
+                <CardGroup className="justify-content-md-center">
                     <Cards list={this.props.data}></Cards>
                 </CardGroup>
         )

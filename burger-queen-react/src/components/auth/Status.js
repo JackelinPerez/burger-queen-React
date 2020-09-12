@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {auth} from '../../services/firebase/config'
 import * as ROUTES from '../../utils/routes'
-import {Redirect, useLocation} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 /*
 Archivo: Estado de sesión

@@ -33,19 +33,16 @@ class SignUp extends React.Component{
 
         }).catch((error)=>{
             this.setState({alert:error})
-            // const errorCode = error.code;
-            // const errorMessage = error.message;
-            // console.log('Code: '+ errorCode+'; Message: '+errorMessage);
         });
     }
 
     render(){
         return(
-            <div className="auth-background">
+            <div className="size-auth">
                 <Container className="h-100 text-center">
                     {this.state.alert?<Alert variant='danger'>{this.state.alert.message}</Alert>:null}
                     <Row className="h-100 justify-content-center align-items-center">
-                        <Col lg={5} className="content-style">
+                        <Col lg={5} className="style-auth">
                             <div class="mt-5">
                                 <h1><strong>Registrarse</strong></h1>
                             </div>

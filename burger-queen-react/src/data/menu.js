@@ -1,7 +1,7 @@
 export const data = [
     {
         "id": 1,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "breakfast",
         "name": "Café americano",
         "price": 5,
@@ -9,7 +9,7 @@ export const data = [
     },
     {
         "id": 2,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "breakfast",
         "name": "Café con leche",
         "price": 7,
@@ -17,7 +17,7 @@ export const data = [
     },
     {
         "id": 3,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "breakfast",
         "name": "Sandwich de jamón y queso",
         "price": 10,
@@ -25,7 +25,7 @@ export const data = [
     },
     {
         "id": 4,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "breakfast",
         "name": "Jugo de frutas natural",
         "price": 7,
@@ -33,7 +33,7 @@ export const data = [
     },
     {
         "id": 5,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "menu",
         "name": "Hamburguesa simple de res",
         "price": 10,
@@ -41,7 +41,7 @@ export const data = [
     },
     {
         "id": 6,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "menu",
         "name": "Hamburguesa simple de pollo",
         "price": 10,
@@ -49,7 +49,7 @@ export const data = [
     },
     {
         "id": 7,
-        "quantity": 1,       
+        "quantity": 0,       
         "category": "menu",
         "name": "Hamburguesa simple vegetariana",
         "price": 10,
@@ -57,7 +57,7 @@ export const data = [
     },
     {
         "id": 8,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "menu",
         "name": "Hamburguesa doble de res",
         "price": 15,
@@ -65,7 +65,7 @@ export const data = [
     },
     {
         "id": 9,
-        "quantity": 1,        
+        "quantity": 0,        
         "category": "menu",
         "name": "Hamburguesa doble de pollo",
         "price": 15,
@@ -73,7 +73,7 @@ export const data = [
     },
     {
         "id": 10,
-        "quantity": 1,
+        "quantity": 0,
         "category": "menu",
         "name": "Hamburguesa doble vegetariana",
         "price": 15,
@@ -81,7 +81,7 @@ export const data = [
     },
     {
         "id": 11,
-        "quantity": 1,
+        "quantity": 0,
         "category": "accompaniment",
         "name": "Papas fritas",
         "price": 5,
@@ -89,7 +89,7 @@ export const data = [
     },
     {
         "id": 12,
-        "quantity": 1,
+        "quantity": 0,
         "category": "accompaniment",
         "name": "Aros de cebolla",
         "price": 5,
@@ -97,7 +97,7 @@ export const data = [
     },
     {
         "id": 13,
-        "quantity": 1,
+        "quantity": 0,
         "category": "drinks",
         "name": "Agua 500ml",
         "price": 5,
@@ -105,7 +105,7 @@ export const data = [
     },
     {
         "id": 14,
-        "quantity": 1,
+        "quantity": 0,
         "category": "drinks",
         "name": "Agua 750ml",
         "price": 7,
@@ -113,7 +113,7 @@ export const data = [
     },
     {
         "id": 15,
-        "quantity": 1,
+        "quantity": 0,
         "category": "drinks",
         "name": "Gaseosa 500ml",
         "price": 7,
@@ -121,7 +121,7 @@ export const data = [
     },
     {
         "id": 16,
-        "quantity": 1,
+        "quantity": 0,
         "category": "drinks",
         "name": "Gaseosa 750ml",
         "price": 10,
@@ -129,7 +129,7 @@ export const data = [
     },
     {
         "id": 17,
-        "quantity": 1,
+        "quantity": 0,
         "category": "accompaniment",
         "name": "Queso",
         "price": 1,
@@ -137,7 +137,7 @@ export const data = [
     },
     {
         "id": 18,
-        "quantity": 1,
+        "quantity": 0,
         "category": "accompaniment",
         "name": "Huevo",
         "price": 1,

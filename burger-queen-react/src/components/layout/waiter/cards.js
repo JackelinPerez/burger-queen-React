@@ -1,44 +1,52 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
-import { isValidElement } from 'react';
+import {connect} from 'react-redux'
 
 class Cards extends React.Component{
-constructor(props){
-    super(props);
-    this.state = {};
-    [...this.props.list].forEach((ele)=> this.state[ele.id]=0)
+
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+                this.props.list.map((ele, id)=>{
+                    return(
+                        <div>
+                            <Card key={id} style={{ width: '22.5rem', height:'27rem', background:'rgba(0, 0, 0, 0.8)'}}>
+                                <Card.Img  variant="top" src={ele.image} style={{ width: '100%', height:'60%'}}></Card.Img>
+                                <Card.Body style={{textAlign:'center', color:'white'}}>
+                                    <Card.Title><strong>{ele.name}</strong></Card.Title>
+                                    <h3 style={{color:'#FDBB4B'}}><strong>S/ {ele.price}.00</strong></h3>
+                                    <Button variant="outline-primary" size="lg" onClick={()=>this.props.decrease(ele)}>-</Button>
+                                    <Button variant="success" size="lg">{ele.quantity}</Button>
+                                    <Button variant="outline-danger" size="lg" onClick={()=>this.props.increase(ele)}>+</Button>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                    )
+                })
+        )
+    }
 }
 
-increase(id, value){
-        this.setState({[id]: ++value});
+const mapStateToProps= (state) =>{
+    return state
 }
 
-decrease(id, value){
-    if(this.state[id]>0)
-        this.setState({[id]: --value});
-}
-
-render(){
-    return(
-        this.props.list.map((ele, id)=>{
-            return(
-                <div>
-                    <Card key={id} style={{ width: '22.5rem', height:'27rem', background:'rgba(0, 0, 0, 0.8)'}}>
-                        <Card.Img  variant="top" src={ele.image} style={{ width: '100%', height:'60%'}}></Card.Img>
-                        <Card.Body style={{textAlign:'center', color:'white'}}>
-                            <Card.Title><strong>{ele.name}</strong></Card.Title>
-                            <h3 style={{color:'#FDBB4B'}}><strong>S/. {ele.price}</strong></h3>
-                            <Button variant="outline-primary" size="lg" onClick={()=>this.decrease(ele.id, this.state[ele.id])}>-</Button>
-                            <Button variant="success" size="lg">{this.state[ele.id]}</Button>
-                            <Button variant="outline-danger" size="lg" onClick={()=>this.increase(ele.id, this.state[ele.id])}>+</Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-            )
+const mapDispatchToProps= (dispatch) =>({
+    increase(value){
+        dispatch({
+            type:'Agregar_Item',
+            value
         })
-    )
-}
+    },
+    decrease(value){
+        dispatch({
+            type:'Eliminar_Item',
+            value
+        })
+    }
+})
 
-}
-
-export default Cards;
+export default connect(mapStateToProps, mapDispatchToProps) (Cards);
