@@ -5,6 +5,7 @@ export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
+export const ORDER ='/home/order';
 export const BREAKFAST = '/home/breakfast'
 export const DRINKS = '/home/drinks'
 export const MENU = '/home/menu';

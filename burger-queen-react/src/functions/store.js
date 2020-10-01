@@ -1,47 +1,53 @@
 import {createStore} from 'redux'
+import {plusElements, orderState, deleteElement, addElement, increaseElements, decreaseElements} from '../functions/funtions'
 
 const initialState = {
     order:[],
+    total:0,
     count:0
 }
 
 const reducer = (state= initialState, action) =>{
-    // [...state.order].map(ele=>console.log('Item: '+ele.name+'; cantidad='+ele.quantity))
 
-    if(action.value){
-        const stateItem = state.order.reduce((aux, item) => {
-            if(item.id === action.value.id) aux=1;
-            return aux
-        },0);
+    const order = state.order;
+    const value = action.value;
+    const type = action.type;
+    let newOrder = [];
+    
+    if(value){
+        const stateItem = orderState( order, value, "id");
 
-        if(action.type==='Agregar_Item'){
+        if(type==='Agregar_Item'){
             if(!stateItem){
-                action.value.quantity=1;
-                return {order: state.order.concat(action.value),count: ++state.count}
+                newOrder = addElement(order, value, "quantity", "price", "subTotal");
             }
-            return{
-                order: state.order.map(ele => {
-                    if(ele.id === action.value.id) ++ele.quantity
-                    return ele;
-                }),
-                count: ++state.count
+            else{
+                newOrder = increaseElements(order, value, "id", "quantity", "price", "subTotal");
             }
-        }else if(action.type==='Eliminar_Item'){
+        }else if(type==='Eliminar_Item'){
             if(stateItem){
-                if(action.value.quantity===1){
-                    --action.value.quantity;
-                    return {order: state.order.filter(ele=> ele.id !== action.value.id), count: --state.count}
+                if(value.quantity===1){
+                    newOrder = deleteElement(order, value, "id", "quantity");
                 }
-                else if(action.value.quantity>1){
-                    return{
-                        order: state.order.map(ele=>{
-                            if(ele.id === action.value.id) --ele.quantity
-                            return ele;
-                        }),
-                        count: --state.count
-                    }
+                else if(value.quantity>1){
+                    newOrder = decreaseElements(order, value, "id", "quantity", "price", "subTotal");
                 }
             }
+        }else if(type==='Eliminar_Producto'){
+            if(stateItem){
+                newOrder = deleteElement(order, value, "id", "quantity");
+            }
+        }else if(type==='Calcular_Pedido'){
+            return{
+                ...state,
+                total: plusElements(order, "subTotal")
+            }
+        }
+
+        return{
+            order: newOrder,
+            count: plusElements(newOrder, "quantity"),
+            total: plusElements(newOrder, "subTotal")
         }
     }    
     return state

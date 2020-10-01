@@ -18,8 +18,8 @@ class Cards extends React.Component{
                                 <Card.Body style={{textAlign:'center', color:'white'}}>
                                     <Card.Title><strong>{ele.name}</strong></Card.Title>
                                     <h3 style={{color:'#FDBB4B'}}><strong>S/ {ele.price}.00</strong></h3>
-                                    <Button variant="outline-primary" size="lg" onClick={()=>this.props.decrease(ele)}>-</Button>
-                                    <Button variant="success" size="lg">{ele.quantity}</Button>
+                                    <Button variant="outline-primary" size="lg" onClick={()=>this.props.decrease(ele)}>-</Button>{' '}
+                                    <Button variant="success" size="lg"><strong>{ele.quantity}</strong></Button>{' '}
                                     <Button variant="outline-danger" size="lg" onClick={()=>this.props.increase(ele)}>+</Button>
                                 </Card.Body>
                             </Card>
